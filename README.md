@@ -36,6 +36,8 @@ integrate speech to text
 figure out cohere api chatbot
 figure out how to diagnose medical diseases based on symptoms?
 
+firebase account authentication?
+
 
 ## Prerequisites
 Before you begin, ensure you have met the following requirements:
