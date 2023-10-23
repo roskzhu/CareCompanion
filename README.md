@@ -37,6 +37,7 @@ figure out cohere api chatbot
 figure out how to diagnose medical diseases based on symptoms?
 
 firebase account authentication?
+can be used anywhere from senior centres, children's homes, serving as a companion, while also being there to diagnose any medical symptoms that arise (i.e. recognize a sneeze and recommend treatment, etc.)
 
 
 ## Prerequisites
