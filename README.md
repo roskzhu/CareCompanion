@@ -4,8 +4,8 @@
           <summary><h1 style="display: inline-block; margin-bottom:0px">CareCompanion</h1></summary>
       </ul>
     </div>
-    <h3>AI Medical Assistant Made Just For You</h3>
-    <h4><i>Chatbot -----xxx</i></h4>
+    <h3>Your AI Ally for Companionship and Learning – Where Chat Meets Knowledge!</h3>
+<!--     <h4><i>Chatbot -----xxx</i></h4> -->
        <br>
     <img src="https://img.shields.io/badge/typescript-%23007ACC.svg?style=flat-square&logo=typescript&logoColor=white"/>
     <img src="https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB"/>
