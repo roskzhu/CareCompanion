@@ -14,7 +14,14 @@ func main() {
 	r.Use(cors.Default())
 
 	// Initialize Cohere client
-	co := cohere.NewClient("YOUR_COHERE_API_KEY")
+	cohereAPIKey := os.Getenv("COHERE_API_KEY")
+
+	if cohereAPIKey == "" {
+		fmt.Println("COHERE_API_KEY environment variable is not set.")
+		return
+	}
+
+	co := cohere.NewClient(cohereAPIKey)
 
 	r.POST("/receive_transcript", func(c *gin.Context) {
 		var json map[string]interface{}
