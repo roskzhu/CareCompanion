@@ -20,7 +20,7 @@
 </div>
 
 <!-- <img src="Home.svg"> -->
-![image](https://github.com/roskzhu/CareCompanion/assets/110139243/32180c90-3ce2-4689-9d48-11b4461e6c7e)
+![image](https://github.com/roskzhu/CareCompanion/assets/110139243/e95430ad-b3c9-4321-8b46-c5f8431da416)
 
 
 CareCompanion is a multifaceted AI chatbot that goes beyond the conventional chatbot experience. It serves as both a friendly companion and an educational tutor, offering users a versatile and enriching interaction. 
