@@ -1,4 +1,4 @@
-![image](https://github.com/roskzhu/CareCompanion/assets/110139243/5de22a0a-af17-45ff-b916-567650c22026)<div align="center">
+<div align="center">
     <div id="user-content-toc">
       <ul>
           <summary><h1 style="display: inline-block; margin-bottom:0px">CareCompanion</h1></summary>
