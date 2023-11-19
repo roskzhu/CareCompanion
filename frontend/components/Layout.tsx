@@ -1,5 +1,6 @@
 import React, { ReactNode } from 'react'
-import Link from 'next/link'
+// import Link from 'next/link'
+import { useRouter } from 'next/router';
 import Head from 'next/head'
 
 type Props = {
@@ -7,7 +8,12 @@ type Props = {
   title?: string
 }
 
-const Layout = ({ children, title = 'This is the default title' }: Props) => (
+const Layout = ({ children, title = 'This is the default title' }: Props) => {
+  const router = useRouter();
+
+  const isCurrentPage = (href: string) => router.pathname === href;
+
+  return (
   <div>
     <Head>
       <title>{title}</title>
@@ -16,17 +22,29 @@ const Layout = ({ children, title = 'This is the default title' }: Props) => (
     </Head>
     <header>
       <nav>
-        <Link href="/">Home</Link> | <Link href="/about">About</Link> |{' '}
-        <Link href="/users">Users List</Link> |{' '}
-        <a href="/api/users">Users API</a>
+        <div className="logo">
+          <span>
+            CareCompanion
+          </span>
+        </div>
+        <div className="nav-links">
+          {/* <Link href="/">Home</Link> | <Link href="/about">About</Link> |{' '}
+          <Link href="/users">Users List</Link> |{' '} */}
+          <a style={{ fontWeight: isCurrentPage('/') ? 'bold' : 'normal' }}>Home</a>
+          {/* <a href="/api/users">Demo</a> */}
+          <a style={{ fontWeight: isCurrentPage('/demo') ? 'bold' : 'normal' }}>Demo</a>
+        </div>
       </nav>
     </header>
     {children}
     <footer>
       <hr />
-      <span>I'm here to stay (Footer)</span>
+      <span style={{fontSize:'0.8em'}}>
+        Made by Rosanne. ©
+      </span>
     </footer>
   </div>
-)
+);
+};
 
 export default Layout

@@ -1,0 +1,22 @@
+.about {
+  margin-top:6em;
+}
+.aboutDesc {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.about h1 {
+  text-align: center;
+  margin-bottom: 0.5em;
+}
+.about h2 {
+  text-align: center;
+  width: 53%;
+  font-size: 0.9em;
+  font-weight: 400;
+  color: rgb(76, 76, 76);
+  margin-bottom: 2em;
+  margin-top: 0;
+}
