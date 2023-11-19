@@ -17,7 +17,7 @@ const IndexPage = () => (
         Elevate your learning <br/>
         with a {" "}
         <span style={{color:'black'}}>personalized <br/>
-        tutor </span>
+        assistant </span>
         and <br/>
         <span>
           companion</span>
