@@ -13,10 +13,126 @@
 }
 .about h2 {
   text-align: center;
-  width: 53%;
+  width: 58%;
   font-size: 0.9em;
   font-weight: 400;
-  color: rgb(76, 76, 76);
+  color: rgb(50, 50, 50);
   margin-bottom: 2em;
   margin-top: 0;
+  position: relative;
+}
+
+.howTo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.howTo h1 {
+  text-align: left;
+  /* margin-top: 3em; */
+  margin-left: 1.3em;
+  font-size: 7em;
+  margin-bottom: 0;
+}
+.howTo h2 {
+  width: 100%;
+  font-style: italic;
+  font-size: 1.1em;
+  margin-bottom: 1.5em;
+}
+.howTo h3 {
+  text-align: left;
+  margin-top: 4em;
+  margin-left: 1.3em;
+  font-size: 2.2em;
+}
+.howTo h4 {
+  text-align: left;
+  font-weight: 400;
+  color: rgb(41, 41, 41);
+  font-size: 0.8em;
+  margin-top: 0;
+  margin-bottom: 0;
+  /* width: ; */
+}
+.howTitle{
+  display: flex;
+  justify-content: center;
+  margin-left: -10em;
+}
+.howDesc{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 3em;
+}
+
+.features {
+  margin-left: 3vw;
+  /* width: 90%; */
+}
+.featuresDesc {
+  /* padding-left: 7vw; */
+  margin-top: 1.8em;
+}
+.features h1 {
+  text-align: left;
+  font-weight: 700;
+  color: black;
+  font-size: 1.7em;
+  font-style: italic;
+}
+.features h2 {
+  text-align: left;
+  font-weight: 600;
+  color: rgb(41, 41, 41);
+  font-size: 1.3em;
+  margin-bottom: 0;
+  width: 100%;
+}
+.featuresLine {
+  width: 100%;
+  content: '';
+  display: inline-block;
+  width: 5em;
+  left: 0;
+  height: 2px; /* Adjust the height of the line as needed */
+  background-color: #333; /* Adjust the color of the line as needed */
+  margin-bottom: 10px;
+  margin-right: 1em;
+  margin-top: 1em;
+}
+/* .features h2:before {
+  width: 100%;
+  content: '';
+  display: inline-block;
+  width: 5em;
+  left: 0;
+  height: 2px; 
+  background-color: #333; 
+  margin-bottom: 10px;
+  margin-right: 1em;
+}
+.features h2:after {
+  width: 100%;
+  content: '';
+  display: inline-block;
+  width: 5em;
+  left: 0;
+  height: 2px; 
+  background-color: #333; 
+  margin-bottom: 10px;
+  margin-left: 1em;
+} */
+.features ul {
+  text-align: left;
+  font-weight: 400;
+  color: rgb(95, 95, 95);
+  font-size: 0.8em;
+  padding-left: 3vw;
+  width: 50em;
+}
+.features ul li {
+  margin: 0.5em;
 }
