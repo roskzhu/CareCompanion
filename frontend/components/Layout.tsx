@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react'
-// import Link from 'next/link'
+import Link from 'next/link'
 import { useRouter } from 'next/router';
 import Head from 'next/head'
 
@@ -30,9 +30,17 @@ const Layout = ({ children, title = 'This is the default title' }: Props) => {
         <div className="nav-links">
           {/* <Link href="/">Home</Link> | <Link href="/about">About</Link> |{' '}
           <Link href="/users">Users List</Link> |{' '} */}
-          <a style={{ fontWeight: isCurrentPage('/') ? 'bold' : 'normal' }}>Home</a>
+          <a style={{ fontWeight: isCurrentPage('/') ? 'bold' : 'normal' }}>
+            <Link href="/">
+              Home
+            </Link>
+            </a>
           {/* <a href="/api/users">Demo</a> */}
-          <a style={{ fontWeight: isCurrentPage('/demo') ? 'bold' : 'normal' }}>Demo</a>
+          <a style={{ fontWeight: isCurrentPage('/demo') ? 'bold' : 'normal' }}>
+            <Link href="/demo">          
+              Demo          
+            </Link>
+          </a>
         </div>
       </nav>
     </header>
