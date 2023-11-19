@@ -35,11 +35,11 @@ Activate Mental Health Mode when you need emotional support or assistance. CareC
 
 
 ## Who Can Benefit?
-- Students: Receive academic support, clarify doubts, and reinforce learning.
-- Professionals: Take a break with casual conversations or seek assistance in areas outside your expertise.
-- Language Learners: Practice and improve language skills through interactive conversations.
-- Individuals Seeking Companionship: Combat loneliness and enjoy the company of a virtual friend.
-- Anyone Seeking Mental Health Support: Access a supportive space for emotional well-being.
+- **Students**: Receive academic support, clarify doubts, and reinforce learning.
+- **Professionals**: Take a break with casual conversations or seek assistance in areas outside your expertise.
+- **Language Learners**: Practice and improve language skills through interactive conversations.
+- **Individuals Seeking Companionship**: Combat loneliness and enjoy the company of a virtual friend.
+- **Anyone Seeking Mental Health Support**: Access a supportive space for emotional well-being.
 
 
 ## Prerequisites
