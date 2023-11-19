@@ -2,6 +2,8 @@ package main
 
 import (
 	"fmt"
+	"os"
+
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 	"github.com/cohere-ai/cohere-go"
@@ -24,19 +26,31 @@ func main() {
 	co := cohere.NewClient(cohereAPIKey)
 
 	r.POST("/receive_transcript", func(c *gin.Context) {
-		var json map[string]interface{}
-		if err := c.ShouldBindJSON(&json); err != nil {
-			c.JSON(400, gin.H{"error": err.Error()})
-			return
-		}
+    var json map[string]interface{}
+    if err := c.ShouldBindJSON(&json); err != nil {
+        c.JSON(400, gin.H{"error": err.Error()})
+        return
+    }
 
-		transcript := json["transcript"].(string)
-		fmt.Printf("Transcript received: %s\n", transcript)
+    transcript := json["transcript"].(string)
+    personality := json["personality"].(string) // Add a 'personality' field to the JSON payload
 
-		// You can handle the transcript here using Cohere client
-		// co.Generate(...) or other Cohere methods
+    fmt.Printf("Transcript received: %s\n", transcript)
 
-		c.JSON(200, gin.H{"message": "Transcript received successfully"})
+    // Set the style/personality for the response
+    styleOptions := cohere.StyleOptions{
+        Personality: personality,
+    }
+
+    // You can handle the transcript here using Cohere client
+    response, err := co.Generate(transcript, styleOptions)
+
+    if err != nil {
+        c.JSON(500, gin.H{"error": err.Error()})
+        return
+    }
+
+    c.JSON(200, gin.H{"message": "Transcript received successfully", "response": response})
 	})
 
 	// Run the server
