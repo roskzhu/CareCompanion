@@ -51,6 +51,9 @@ Before you begin, ensure you have met the following requirements:
 ## Architecture Overview
 to be added
 
+## Next Steps
+Take CareCompanion on the go by creating a dedicated mobile app version :)
+
 ## Getting Started
 
 ### Starting the server
