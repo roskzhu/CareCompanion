@@ -18,10 +18,10 @@
     <img src="https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white"/>
     <br><br>
     </div>
-</div>
+</div>![CareCompanion drawio](https://github.com/roskzhu/CareCompanion/assets/110139243/6f5418f6-d8cb-4b87-ad62-3b72b126b17b)
+
 
 <!-- <img src="Home.svg"> -->
-![image](https://github.com/roskzhu/CareCompanion/assets/110139243/e95430ad-b3c9-4321-8b46-c5f8431da416)
 
 
 CareCompanion is a multifaceted AI chatbot that goes beyond the conventional chatbot experience. It serves as both a friendly companion and an everyday assistant, offering users a versatile and enriching interaction. 
@@ -50,7 +50,8 @@ Before you begin, ensure you have met the following requirements:
 - [Python](https://www.python.org/) and [pip](https://pip.pypa.io/en/stable/) installed for the backend.
 
 ## Architecture Overview
-to be added
+![image](https://github.com/roskzhu/CareCompanion/assets/110139243/e95430ad-b3c9-4321-8b46-c5f8431da416)
+
 
 ## Next Steps
 Take CareCompanion on the go by creating a dedicated mobile app version :)
