@@ -1,7 +1,11 @@
 <div align="center">
     <div id="user-content-toc">
-      <ul>
-          <li style="font-size: 5em;">🤝</li>
+      <div align="center">
+          <div>
+            <img src="![image](https://github.com/roskzhu/CareCompanion/assets/110139243/f328ede9-cd8e-41f3-98cc-d6cee925bc44)" width="50px" style="pointer-events: none;"/>
+          </div>
+        </div>
+        <ul>
           <summary><h1 style="display: inline-block; margin-bottom:0px">CareCompanion</h1></summary>
       </ul>
     </div>
