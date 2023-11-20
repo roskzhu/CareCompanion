@@ -36,9 +36,9 @@ const Layout = ({ children, title = 'This is the default title' }: Props) => {
             </Link>
             </a>
           {/* <a href="/api/users">Demo</a> */}
-          <a style={{ fontWeight: isCurrentPage('/demo') ? 'bold' : 'normal' }}>
-            <Link href="/demo">          
-              Demo          
+          <a style={{ fontWeight: isCurrentPage('/chat') ? 'bold' : 'normal' }}>
+            <Link href="/chat">          
+              Chat
             </Link>
           </a>
         </div>
