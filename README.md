@@ -1,6 +1,7 @@
 <div align="center">
     <div id="user-content-toc">
       <ul>
+          🤝
           <summary><h1 style="display: inline-block; margin-bottom:0px">CareCompanion</h1></summary>
       </ul>
     </div>
