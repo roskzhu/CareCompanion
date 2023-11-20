@@ -2,7 +2,7 @@
     <div id="user-content-toc">
       <div align="center">
           <div>
-            <img src="![image](https://github.com/roskzhu/CareCompanion/assets/110139243/f328ede9-cd8e-41f3-98cc-d6cee925bc44)" width="50px" style="pointer-events: none;"/>
+            ![image](https://github.com/roskzhu/CareCompanion/assets/110139243/4ab44eee-6ddf-4b66-923e-5fc565d47147)
           </div>
         </div>
         <ul>
