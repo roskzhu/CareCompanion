@@ -1,4 +1,4 @@
-<div align="center">
+<div align="center" style="margin-bottom:0px">
     <img src="https://github.com/roskzhu/CareCompanion/assets/110139243/4ab44eee-6ddf-4b66-923e-5fc565d47147" width="40px" alt="image"/>
 </div>
 <div id="user-content-toc">
