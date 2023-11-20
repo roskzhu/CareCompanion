@@ -1,6 +1,6 @@
 <div align="center">
   <div>
-    <img src="https://github.com/roskzhu/CareCompanion/assets/110139243/4ab44eee-6ddf-4b66-923e-5fc565d47147" width="50px" alt="image"/>
+    <img src="https://github.com/roskzhu/CareCompanion/assets/110139243/4ab44eee-6ddf-4b66-923e-5fc565d47147" width="40px" alt="image"/>
   </div>
 </div>
 <div id="user-content-toc">
