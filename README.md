@@ -4,9 +4,10 @@
   </div>
 </div>
 <div id="user-content-toc">
-    <h1 align="center" style="display: inline-block; margin-bottom:0px">CareCompanion</h1>
+  <div align="center"> 
+    <h1 style="display: inline-block; margin-bottom:0px">CareCompanion</h1>
     <h3>Your AI Ally for Companionship and Learning – Where Chat Meets Knowledge</h3>
-    <h4><i>Chatbot -----xxx</i></h4>
+<!--     <h4><i>Chatbot -----xxx</i></h4> -->
        <br>
     <img src="https://img.shields.io/badge/golang-%2300ADD8.svg?style=for-the-badge&logo=go&logoColor=white"/>
     <img src="https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white"/>
@@ -18,6 +19,7 @@
     <!-- <img src="https://img.shields.io/badge/redux-%23316192.svg?style=for-the-badge&logo=redux&logoColor=white"/> -->
     <img src="https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white"/>
     <br><br>
+    </div>
 </div>
 
 <!-- <img src="Home.svg"> -->
