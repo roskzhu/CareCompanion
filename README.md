@@ -4,7 +4,7 @@
 <div id="user-content-toc">
   <div align="center"> 
     <h1 style="display: inline-block; margin-bottom:0px">CareCompanion</h1>
-    <h3>Your AI Ally for Companionship and Learning – Where Chat Meets Knowledge</h3>
+    <h3>Your AI Ally for Companionship and Learning</h3>
 <!--     <h4><i>Chatbot -----xxx</i></h4> -->
        <br>
     <img src="https://img.shields.io/badge/golang-%2300ADD8.svg?style=for-the-badge&logo=go&logoColor=white"/>
