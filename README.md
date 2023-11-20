@@ -4,9 +4,7 @@
   </div>
 </div>
 <div id="user-content-toc">
-    <ul>
-      <summary><h1 align="center" style="display: inline-block; margin-bottom:0px">CareCompanion</h1></summary>
-    </ul>
+    <h1 align="center" style="display: inline-block; margin-bottom:0px">CareCompanion</h1>
     <h3>Your AI Ally for Companionship and Learning – Where Chat Meets Knowledge</h3>
 <!--     <h4><i>Chatbot -----xxx</i></h4> -->
        <br>
