@@ -1,8 +1,8 @@
 <div align="center">
     <div id="user-content-toc">
-      <div align="center">
+        <div align="center">
           <div>
-            ![image](https://github.com/roskzhu/CareCompanion/assets/110139243/4ab44eee-6ddf-4b66-923e-5fc565d47147)
+            <img src="https://github.com/roskzhu/CareCompanion/assets/110139243/4ab44eee-6ddf-4b66-923e-5fc565d47147" alt="image"/>
           </div>
         </div>
         <ul>
