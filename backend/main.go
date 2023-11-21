@@ -13,6 +13,12 @@ import (
 func main() {
     r := gin.Default()
 
+    // Register the handleAudioRequest function as the handler for the /transcribe endpoint
+	http.HandleFunc("/transcribe", handleAudioRequest)
+
+	// Start the HTTP server on port 8080
+	log.Fatal(http.ListenAndServe(":8080", nil))
+
     // CORS middleware
     r.Use(cors.Default())
 
