@@ -2,7 +2,7 @@
 package main
 
 import (
-    "bytes"
+	"bytes"
 	"context"
 	"encoding/base64"
 	"fmt"
@@ -11,15 +11,20 @@ import (
 	"net/http"
 	"strings"
 
-    "github.com/gin-gonic/gin"
-    "github.com/cohere-ai/cohere-go"
+	"github.com/gin-gonic/gin"
+	"github.com/cohere-ai/cohere-go"
 
-    "cloud.google.com/go/speech/apiv1"
+	"cloud.google.com/go/speech/apiv1"
 	"google.golang.org/api/option"
 	speechpb "google.golang.org/genproto/googleapis/cloud/speech/v1"
 )
 
-func ReceiveTranscriptHandler(c *gin.Context) {
+var (
+	gcpAPIKey    = os.Getenv("GOOGLE_CLOUD_API_KEY")    // Retrieve Google Cloud API key from environment variable
+	cohereAPIKey = os.Getenv("COHERE_API_KEY") // Retrieve Cohere API key from environment variable
+)
+
+func receiveTranscriptHandler(c *gin.Context) {
     var json map[string]interface{}
     if err := c.ShouldBindJSON(&json); err != nil {
         c.JSON(400, gin.H{"error": err.Error()})
@@ -87,6 +92,7 @@ func transcribeSpeech(audioContent []byte) (string, error) {
 	return transcript, nil
 }
 
+
 // Handler function for processing audio data from the frontend
 func handleAudioRequest(w http.ResponseWriter, r *http.Request) {
 	if r.Method != http.MethodPost {
@@ -125,4 +131,49 @@ func handleAudioRequest(w http.ResponseWriter, r *http.Request) {
 
 	// Return the transcription to the frontend
 	fmt.Fprintf(w, "Transcription: %s", transcription)
+}
+
+
+// Function to interact with the Cohere chatbot
+func interactWithCohere(message string) (string, error) {
+	// Set the style/personality for the chatbot response
+	styleOptions := cohere.StyleOptions{
+		Personality: "your_personality", // Set your desired personality here
+	}
+
+	// You can handle the chat interaction here using Cohere client
+	response, err := co.Generate(message, styleOptions)
+	if err != nil {
+		return "", fmt.Errorf("Cohere chatbot error: %v", err)
+	}
+
+	return response, nil
+}
+
+
+// Handler function for processing chatbot requests from the frontend
+func handleCohereChat(w http.ResponseWriter, r *http.Request) {
+	if r.Method != http.MethodPost {
+		http.Error(w, "Method not allowed", http.StatusMethodNotAllowed)
+		return
+	}
+
+	var json map[string]interface{}
+	if err := c.ShouldBindJSON(&json); err != nil {
+		http.Error(w, fmt.Sprintf("Error parsing JSON: %v", err), http.StatusBadRequest)
+		return
+	}
+
+	message := json["message"].(string)
+
+	// Interact with the Cohere chatbot
+	response, err := interactWithCohere(message)
+	if err != nil {
+		log.Printf("Cohere chatbot error: %v", err)
+		http.Error(w, "Error interacting with Cohere chatbot", http.StatusInternalServerError)
+		return
+	}
+
+	// Return the chatbot response to the frontend
+	c.JSON(200, gin.H{"response": response})
 }

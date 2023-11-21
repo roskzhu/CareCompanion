@@ -29,7 +29,7 @@ const ChatPage = () => {
           const audioData = await audioBlob.arrayBuffer();
 
           // Read Google Cloud API key from environment variable
-          const apiKey = process.env.REACT_APP_GOOGLE_CLOUD_API_KEY;
+          const apiKey = process.env.GOOGLE_CLOUD_API_KEY;
 
           // Send a POST request to your backend for transcription using Google Cloud Speech-to-Text
           try {
