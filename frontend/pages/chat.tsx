@@ -5,7 +5,7 @@ import ChatComponent from '../components/ChatComponent';
 
 const ChatPage = () => {
   const [microphoneAccess, setMicrophoneAccess] = useState<boolean | null>(null);
-  const [speechRecognition, setSpeechRecognition] = useState<SpeechRecognition | null>(null);
+  const [speechRecognition, setSpeechRecognition] = useState<MediaRecorder | null>(null);
 
   useEffect(() => {
     const requestMicrophoneAndSpeechRecognition = async () => {
@@ -14,47 +14,51 @@ const ChatPage = () => {
         const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
         setMicrophoneAccess(true);
 
-        // Set up SpeechRecognition
-        const recognition = new SpeechRecognition();
-        recognition.continuous = true;
-        recognition.interimResults = true;
+        // Set up MediaRecorder to capture audio
+        const recorder = new MediaRecorder(stream);
+        let audioChunks: Blob[] = [];
 
-        recognition.onstart = () => console.log('Speech recognition started.');
-        recognition.onerror = (event) => console.error('Speech recognition error:', event.error);
-        recognition.onresult = async (event) => {
-          const transcript = Array.from(event.results)
-            .map((result) => result[0].transcript)
-            .join('');
-          console.log('Speech recognition result:', transcript);
+        recorder.onstart = () => console.log('Recording started.');
+        recorder.ondataavailable = (event) => {
+          if (event.data.size > 0) {
+            audioChunks.push(event.data);
+          }
+        };
+        recorder.onstop = async () => {
+          const audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
+          const audioData = await audioBlob.arrayBuffer();
 
-          // Encode the transcript to base64
-          const audioData = btoa(transcript);
+          // Read Google Cloud API key from environment variable
+          const apiKey = process.env.REACT_APP_GOOGLE_CLOUD_API_KEY;
 
-          // Send a POST request to your backend
+          // Send a POST request to your backend for transcription using Google Cloud Speech-to-Text
           try {
-            const response = await fetch('http://your-backend/transcribe', {
+            const response = await fetch('http://localhost:3000/transcribe', {
               method: 'POST',
               headers: {
-                'Content-Type': 'application/json', // or 'application/x-www-form-urlencoded', depending on your backend
+                'Content-Type': 'application/octet-stream',
+                'Authorization': `Bearer ${apiKey}`, // Use the API key from the environment variable
               },
-              body: JSON.stringify({ audioData }),
+              body: audioData,
             });
 
             if (!response.ok) {
-              console.error('Failed to send transcription to backend:', response.statusText);
+              console.error('Failed to transcribe audio:', response.statusText);
             } else {
-              console.log('Transcription sent to backend successfully.');
+              console.log('Audio transcribed successfully.');
             }
           } catch (error) {
-            console.error('Error sending transcription to backend:', error);
+            console.error('Error transcribing audio:', error);
           }
+
+          audioChunks = [];
         };
 
-        // Start speech recognition
-        recognition.start();
+        // Start recording
+        recorder.start();
 
-        // Save the SpeechRecognition instance in state
-        setSpeechRecognition(recognition);
+        // Save the MediaRecorder instance in state
+        setSpeechRecognition(recorder);
 
         // Don't forget to stop the stream when you're done using it
         stream.getTracks().forEach(track => track.stop());
@@ -64,10 +68,10 @@ const ChatPage = () => {
       }
     };
 
-    // Call the function to request microphone access and set up speech recognition
+    // Call the function to request microphone access and set up audio recording
     requestMicrophoneAndSpeechRecognition();
 
-    // Clean up: stop speech recognition when the component unmounts
+    // Clean up: stop recording when the component unmounts
     return () => {
       if (speechRecognition) {
         speechRecognition.stop();
