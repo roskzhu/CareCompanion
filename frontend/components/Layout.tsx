@@ -28,14 +28,11 @@ const Layout = ({ children, title = 'This is the default title' }: Props) => {
           </span>
         </div>
         <div className="nav-links">
-          {/* <Link href="/">Home</Link> | <Link href="/about">About</Link> |{' '}
-          <Link href="/users">Users List</Link> |{' '} */}
           <a style={{ fontWeight: isCurrentPage('/') ? 'bold' : 'normal' }}>
             <Link href="/">
               Home
             </Link>
           </a>
-          {/* <a href="/api/users">xxx</a> */}
           <a style={{ fontWeight: isCurrentPage('/chat') ? 'bold' : 'normal' }}>
             <Link href="/chat">          
               Chat
